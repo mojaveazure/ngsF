@@ -7,9 +7,14 @@ set -o pipefail
 #   A function to display a message if we aren't on Mac OS X
 function notMac() {
     echo -e "\
-
-"
+This install script is for Mac OS X only. \n\
+For Linux and other UNIX-like operating systems, \n\
+please use the original ngsF, located at: \n\
+https://https://github.com/fgvieira/ngsF \n\
+" >&2
+    exit 1
 }
+
 #   A function to download and install the GNU Scientific Library (GSL)
 function installGSL() {
     #   Because we want to return a value, we need to write all standard output and error streams to /dev/null when applicable
@@ -45,9 +50,6 @@ then # If so...
 else # If not...
     INCLUDE_DIR=$(installGSL $(pwd -P)) # Install it
 fi
-
-#   Export the function
-export -f installGSL
 
 #   Install ngsF
 make -C bgzf bgzip # Install bgzip
