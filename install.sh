@@ -15,6 +15,9 @@ https://https://github.com/fgvieira/ngsF \n\
     exit 1
 }
 
+#   Check for zlib
+if ! [[ $(ls /usr/lib/ | grep libz) ]] && ! [[ $(ls /usr/local/lib | grep libz) ]]; then echo "Failed to find zlib! Exiting..." >&2; exit 1; fi
+
 #   A function to download and install the GNU Scientific Library (GSL)
 function installGSL() {
     #   Because we want to return a value, we need to write all standard output and error streams to /dev/null when applicable
