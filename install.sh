@@ -58,6 +58,7 @@ if [[ $(ls /usr/local/include | grep 'gsl') ]]
 then # If so...
     INCLUDE_DIR='/usr/local/include' # The library is in /usr/local/include
 else # If not...
+    echo "Failed to find the GNU Scientific Library, installing..." >&2
     INCLUDE_DIR=$(installGSL $(pwd -P)) # Install it
 fi
 
