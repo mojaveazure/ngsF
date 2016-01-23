@@ -4,3 +4,4 @@ bgzf/bgzip
 ngsF
 examples/testF.*
 examples/test.log
+gsl*
