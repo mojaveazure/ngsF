@@ -1,6 +1,13 @@
-
-
 # ngsF
+
+---
+> ## Note: This version is for Mac OS X only
+
+> This version of `ngsF` does not include a makefile for universal installation. Instead, it contains a special script designed to install `ngsF` on Mac OS X using Clang. To install `ngsF` on other operating systems, please see Dr. Vieira's repository on [GitHub](https://https://github.com/fgvieira/ngsF).
+
+> The difference between this version and Dr. Vieira's is the install script properly links the GNU Scientific Library (GSL) with the compiler for Mac OS X.
+
+---
 
 `ngsF` is a program to estimate per-individual inbreeding coefficients under a probabilistic framework that takes the uncertainty of genotype's assignation into account. It avoids calling genotypes by using genotype likelihoods or posterior probabilities.
 
@@ -16,23 +23,23 @@
 
 `ngsF` can be easily installed but has some external dependencies:
 
-* `zlib`: v1.2.7 tested on Debian 7.8 (wheezy)
-* `gsl` : v1.15 tested on Debian 7.8 (wheezy)
-* `md5sum`: only needed for `make test`
+* `zlib`: This should be installed by default for Mac OS X
+* `gsl` : This can be obtained using homebrew for a global installation, or it will be installed automatically
 
 To install the entire package just download the source code:
 
-    % git clone https://github.com/fgvieira/ngsF.git
+```shell
+git clone https://github.com/mojaveazure/ngsF.git
+```
 
 To install these tools just run:
 
-    % cd ngsF
-    % make
-    % make test
+```shell
+cd ngsF
+./install.sh
+```
 
 Executables are built into the main directory. If you wish to clean all binaries and intermediate files:
-
-    % make clean
 
 ### Usage
 
